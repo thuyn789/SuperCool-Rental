@@ -1,19 +1,9 @@
 <?php include 'common/common-meta-header.php'; ?>
 
 <div class="container">
-	<div class="navibar">
-		<img src="images/brand_logo.png" class="brand_logo" alt="logo image">
-		<nav>
-			<ul>
-				<li><a href="index.php">HOME</a></li>
-				<li><a href="login.php">LOGIN/SIGNUP</a></li>
-				<li><a href="#">OUR TEAM</a></li>
-				<li><a href="#">CREDITS</a></li>
-			</ul>
-		</nav>
-	</div>
+	<?php include 'common/navibar.php'; ?>
 
-	<div class="welcome">
+	<div class="main_content">
 		<div class="intro">
 			<h1>Welcome to Super Cool Rental</h1>
 			<p>Where we offer super affordable rate for car rental and parking services</p>

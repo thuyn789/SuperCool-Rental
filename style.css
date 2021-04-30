@@ -20,6 +20,9 @@
 	padding-left: 6%;
 	padding-right: 6%;
 	background-color: white;
+	position: fixed;
+	top: 0;
+	width: 90%;
 
 }
 
@@ -45,6 +48,10 @@ nav ul li{
 	margin-left: 60px;
 }
 
+.hide{
+	display: none;
+}
+
 nav ul li a{
 	text-decoration: none;
 	color: gray;
@@ -61,18 +68,27 @@ nav ul li a:hover{
 	to {color:blue; background-color: lightblue;}
 }
 
-.welcome{
+.main_content{
 	display: flex;
-	height: 80%;
+	height: 90%;
 	align-items: center;
-	padding-left: 6%;
-	padding-right: 6%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 
-.intro, .more_info{
-	flex-basis: 50%;
+.intro, 
+.services{
+	flex: 50%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	color: white;
 }
+
 
 .intro h1{
 	color: white;
@@ -85,28 +101,35 @@ nav ul li a:hover{
 	line-height: 20px;
 }
 
-.pic{
+.pic, .team_member{
 	text-align: center;
 	display: inline-block;
 	border-radius: 10px;
 	padding: 15px 25px;
-	box-sizing: border-box;
 	cursor: pointer;
-	margin: 20px 40px;
-	background-position: center;
-	background-size: cover;
 	transition: transform 0.5s;
 }
 
-.pic:hover{
+.pic:hover, .team_member:hover{
 	transform: translateY(-8px);
 }
 
-.pic h3{
+.pic h3, .team_member h3{
 	color: white;
+}
+
+.team_member img{
+	border-radius: 50%;
+	width: 220px;
+	height: 220px;
 }
 
 .rental_image, .parking_image{
 	width: 234px;
 	height: 293px;
+}
+
+.team_info, .source_info{
+	color: white;
+	flex: 50%;
 }
