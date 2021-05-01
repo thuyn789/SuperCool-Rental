@@ -12,6 +12,7 @@ Version: 1.0 beta
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<link rel="icon" type="imag/gif" href="./images/web_icon.png"/>
+	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
 	<title>Super Cool Rental</title>
 </head>
 <body>

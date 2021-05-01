@@ -1,79 +1,41 @@
 <?php include 'common/common-meta-header.php'; ?>
 
 <div class="container">
-    <!--
-    <div class="icon">
-        <img src="images/Signup.jpg">
-    </div>
-    -->
 
-    <div>
-        <img class="title_img" src="./images/Title.JPG" alt="image">
-    </div>
+    <?php include 'common/navibar.php'; ?>
 
-    <div class="input-div">
-        <form class="input" action="signup-submit.php" method="POST" name="signup_form">
-            <fieldset>
-                <legend>Sign Up</legend>
-                <table>
-                    <!--Username row-->
-                    <tr>
-                        <td>
-                            <label>Username:</label>
-                        </td>
+    <div class="main_content">
+        <div class="register_form">
+            <form>
+                <img src="./images/user_icon.png">
+                <h2>Sign Up</h2>
+                <div class="error" id="fnameErr"></div>
+                <input id="first_name" class="input_box" type="text" size="16" placeholder="First Name"><br/>
 
-                        <td>
-                            <input name="username" type="text" size="16" placeholder="Username">
-                        </td>
-                    </tr>
+                <div class="error" id="lnameErr"></div>
+                <input id="last_name" class="input_box" type="text" size="16" placeholder="Last Name"><br/>
 
-                    <!--Email row-->
-                    <tr>
-                        <td>
-                            <label>Email:</label>
-                        </td>
-                        <td>
-                            <input name="email" type="text" size="16" placeholder="Email">
-                        </td>
-                    </tr>
+                <div class="error" id="usernameErr"></div>
+                <input id="username" class="input_box" type="text" size="16" placeholder="Username"><br/>
 
-                    <!--Password row-->
-                    <tr>
-                        <td>
-                            <label>Password:</label>
-                        </td>
-                        <td>
-                            <input type="password" name="password" size="16" placeholder="Password">
-                        </td>
-                    </tr>
+                <div class="error" id="emailErr"></div>
+                <input id="email" class="input_box" type="text" size="16" placeholder="Email"><br/>
 
-                    <!--Confirm password row-->
-                    <tr>
-                        <td>
-                            <label for="confirm_password">Confirm Password:</label>
-                        </td>
-                        <td>
-                            <input type="password" id="confirm_password" name="confirm_password" size="16" placeholder="Confirm Password">
-                        </td>
-                    </tr>
+                <div class="error" id="passwordErr"></div>
+                <input id="password" class="input_box" type="password" size="16" placeholder="Password"><br/>
 
-                    <!--Submit row-->
-                    <tr>
-                        <td colspan="2" class="centered">
-                            <input id="submit-btn" class="submit-btn" name="submit" type="submit" value="Sign up!">
-                        </td>
-                    </tr>
+                <div class="error" id="confPasswordErr"></div>
+                <input id="confirm_password" class="input_box" type="password" size="16" placeholder="Confirm Password"><br/>
 
-                    <!--Go to login-->
-                    <tr>
-                        <td colspan="2" class="centered">
-                            <a href="index.php">Already Registered? Login In</a>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
+                <input id="submit-btn" class="btn" type="button" onclick="validateForm()" value="Sign up!"><br/>
+
+                <hr/>
+                <p>Already Registered? <a href="index.php">Login</a></p>
+            </form>
+        </div>
     </div>
 </div>
 
+
+<script src="./scripts/signup_form.js"></script>
 <?php include 'common/common-footer.php'; ?>
