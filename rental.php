@@ -4,31 +4,21 @@
 	<?php include 'common/navibar.php'; ?>
 
 	<div class="main_content">
-		<div class="car_info">
-			<a href="#">
-			<img src="images/porche911.jpg" alt="Porche">
-			<h3> Porche 911</h3>
-			</a>
-		</div>
-		<div class="car_info">
-			<a href="#">
-			<img src="images/bmwx5.jpg" alt="BMW X5">
-			<h3>BMW X5</h3>
-			</a>
-		</div>
-		<div class="car_info">
-			<a href="#">
-			<img src="images/audia6.jpg" alt="Audi A6">
+		<div class="team_member">
+			<img src="images/audia6.png" alt="Audi A6">
 			<h3>Audi A6</h3>
-		</a>
 		</div>
-		<div class="car_info">
-			<a href="#">
-			<img src="images/benzeclass.jpg" alt="Benz E Class">
+		<div class="team_member">
+			<img src="images/benzeclass.png" alt="Benz E Class">
 			<h3>Benz E Class</h3>
-			</a>
 		</div>
-
+		<div class="team_member">
+			<img src="images/bmwx5.png" alt="BMW X5">
+			<h3>BMW X5</h3>
+		</div>
+		<div class="team_member">
+			<img src="images/porche911.png" alt="Poeche 911">
+			<h3>Porche 911</h3>
 		</div>
 	</div>
 </div>
