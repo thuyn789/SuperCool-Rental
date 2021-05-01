@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>
+    Rent Car Page
+</title>
+<link rel="stylesheet" href="./style.css">
+<script src="./scripts/rent.js"></script>
+<script src="./scripts/checkout.js"></script>
+</head>
+<body>
+    <div id="rent_outer_container">
+        <div id="rent_upper_div">
+            <img id="rent_renting_img" src="./images/renting_img.png" alt="Renting Image Goes Here">
+            <h1 id="rent_header">Renting</h1>
+            
+            <img id="rent_shoppingcart" src="./images/shoppingcart_img.png" alt="Shopping cart">
+        </div>
+
+        <div id="rent_lower_div">
+            <div id="rent_menu_div">
+                <label for="car_type">Choose a type of Car</label>
+                <select id="car_type" name="car_type">
+                    <option value="SUV">SUV</option>
+                    <option value="Compact">Compact</option>
+                    <option value="Midsize">Midsize</option>
+                    <option value="Luxury">Luxury</option>
+                </select>
+
+                <button type="button" onclick="populateTable()">Submit!</button>
+
+            </div>
+
+            <div id="rent_content_div">
+                <table id="rent_table"></table>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
