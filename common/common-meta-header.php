@@ -15,6 +15,7 @@ Version: 1.0 beta
 	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+	<script src="./scripts/firebase-key.js"></script>
 	<title>Super Cool Rental</title>
 </head>
 <body>

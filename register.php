@@ -27,7 +27,7 @@
                 <div class="error" id="confPasswordErr"></div>
                 <input id="confirm_password" class="input_box" type="password" size="16" placeholder="Confirm Password"><br/>
 
-                <input id="submit-btn" class="btn" type="button" onclick="validateForm()" value="Sign up!"><br/>
+                <input id="submit-btn" class="btn" type="button" onclick="signup()" value="Sign up!"><br/>
 
                 <hr/>
                 <p>Already Registered? <a href="index.php">Login</a></p>
@@ -37,5 +37,5 @@
 </div>
 
 
-<script src="./scripts/signup_form.js"></script>
+<script src="./scripts/signup_login.js"></script>
 <?php include 'common/common-footer.php'; ?>
