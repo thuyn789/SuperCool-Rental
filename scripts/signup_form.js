@@ -1,3 +1,26 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyCAN6ltkh5UO6UYwLF3FmJrHt73bCfLgj8",
+    authDomain: "supercool-rental.firebaseapp.com",
+    databaseURL: "https://supercool-rental-default-rtdb.firebaseio.com",
+    projectId: "supercool-rental",
+    storageBucket: "supercool-rental.appspot.com",
+    messagingSenderId: "138927912921",
+    appId: "1:138927912921:web:4a28b2011ffb2605464bc8"
+};
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+//Define Users object
+class Users{
+    constructor(firstname, last_name,
+        username, email){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.username = username;
+        this. email = email;
+    }
+}
 
 // Defining a function to display error message
 function printError(elemId, hintMsg) {
@@ -88,7 +111,7 @@ function printError(elemId, hintMsg) {
         //After checking, if there is no error
         //Save user data to firebase
         if(!isErr){
-        		
+            const user = new Users(fname,lname,username,email);
         }else{
 
         }

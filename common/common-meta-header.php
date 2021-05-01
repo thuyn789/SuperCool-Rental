@@ -13,6 +13,8 @@ Version: 1.0 beta
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<link rel="icon" type="imag/gif" href="./images/web_icon.png"/>
 	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
 	<title>Super Cool Rental</title>
 </head>
 <body>
