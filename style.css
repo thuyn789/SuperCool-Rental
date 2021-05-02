@@ -191,8 +191,25 @@ nav ul li a:hover{
 }
 
 .error {
-    color: red;
-    font-size: 90%;
-    text-decoration: underline;
+	color: red;
+	font-size: 90%;
+	text-decoration: underline;
 }
 
+.user_menu{
+	flex: 30%;
+	align-items: right;
+	color: white;
+}
+
+.user_menu li{
+	font-size: 20px;
+	list-style: none;
+}
+
+.sub_content{
+	flex: 70%;
+	align-items: right;
+	color: white;
+}
+}
