@@ -4,7 +4,6 @@
     Rent Car Page
 </title>
 <link rel="stylesheet" href="./style.css">
-<script src="./scripts/rent.js"></script>
 <script src="./scripts/checkout.js"></script>
 </head>
 <body>
@@ -26,7 +25,8 @@
                     <option value="Luxury">Luxury</option>
                 </select>
 
-                <button type="button" onclick="populateTable()">Submit!</button>
+                <button type="button" onclick="retrieveRentalsFromDatabase()">Submit!</button>
+                <button type="button" onclick="InsertSUVTest()">Insert Into Database</button>
 
             </div>
 
@@ -40,6 +40,11 @@
     </div>
 
 
-
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    
+    <script src="./scripts/rent.js"></script>
+    
 </body>
 </html>
