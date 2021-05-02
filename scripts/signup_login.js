@@ -2,17 +2,6 @@
 var auth = firebase.auth();
 var database = firebase.database();
 
-//Define Users object
-class Users {
-    constructor(firstname, lastname,
-        username, email) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.username = username;
-        this.email = email;
-    }
-}
-
 // Defining a function to display error message
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
@@ -99,24 +88,31 @@ function signup() {
     }
 
     //Create user object with the information from text field
-    const user = new Users(fname, lname, username, email);
+
+    var user_obj = {
+        first_name: fname,
+        last_name: lname,
+        user_name: username,
+        email_address: email
+    };
 
     // [START auth_signin_password]
     auth.createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in
-            var user = userCredential.user;
+        .then(function(user) {
+            var user = auth.currentUser;
 
-            if (user !== null) {
-                alert("Sign up successful. Thank you");
-            }
+            database.ref('users/' + user.uid).set(user_obj);
+            alert("Sign up successful. Thank you");
 
-            //On success, take user back to index page
-            //The difference between href and replace()
-            //replace() removes the URL of the current document from 
-            //the document history, meaning that it is not possible to 
-            //use the "back" button to navigate back to the original document.
-            window.location.replace("index.php");
+            setTimeout(() => {
+                //On success, take user back to index page
+                //The difference between href and replace()
+                //replace() removes the URL of the current document from 
+                //the document history, meaning that it is not possible to 
+                //use the "back" button to navigate back to the original document.
+                window.location.replace("index.php");
+            }, 5000);
+
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -124,9 +120,9 @@ function signup() {
 
             //If email address is used, alert user
             alert(errorMessage);
+            return;
         });
     // [END auth_signin_password]
-    return;
 }
 
 function login() {
@@ -200,32 +196,7 @@ function isSignIn() {
             return;
         } else {
             // No user is signed in.
-            // Sign in users with the provided login credential 
 
-            firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
-                .then(() => {
-                    // Existing and future Auth states are now persisted in the current
-                    // session only. Closing the window would clear any existing state even
-                    // if a user forgets to sign out.
-                    // ...
-                    // New sign-in will be persisted with session persistence.
-                    return firebase.auth().signInWithEmailAndPassword(email, password)
-                        .then((userCredential) => {
-                            // Signed in 
-                            var user = userCredential.user;
-                            alert("Login successful");
-                            window.location.replace("index.php");
-                            // ...
-                        });
-                })
-                .catch((error) => {
-                    // Handle Errors here.
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-
-                    //If error occured, alert user
-                    alert(errorMessage);
-                });
         }
     });
 }
