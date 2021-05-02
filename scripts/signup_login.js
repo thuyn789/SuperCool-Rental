@@ -101,44 +101,31 @@ function signup() {
     //Create user object with the information from text field
     const user = new Users(fname, lname, username, email);
 
-    //Check if user is login
-    auth.onAuthStateChanged(function(user) {
-        if (user) {
-            // User is already signed in.
-            // return
-            var logout_button = document.getElementsByClassName("hide")[0];
-            logout_button.setAttribute("class", "shown");
+    // [START auth_signin_password]
+    auth.createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Signed in
+            var user = userCredential.user;
 
+            if (user !== null) {
+                alert("Sign up successful. Thank you");
+            }
+
+            //On success, take user back to index page
             //The difference between href and replace()
             //replace() removes the URL of the current document from 
             //the document history, meaning that it is not possible to 
             //use the "back" button to navigate back to the original document.
             window.location.replace("index.php");
-            return;
-        } else {
-            // [START auth_signin_password]
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Signed in
-                    var user = userCredential.user;
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
 
-                    if (user !== null) {
-                        alert("Sign up successful. Thank you");
-                    }
-
-                    //On success, take user back to index page
-                    window.location.replace("index.php");
-                })
-                .catch((error) => {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-
-                    //If email address is used, alert user
-                    alert(errorMessage);
-                });
-            // [END auth_signin_password]
-        }
-    });
+            //If email address is used, alert user
+            alert(errorMessage);
+        });
+    // [END auth_signin_password]
     return;
 }
 
@@ -175,15 +162,39 @@ function login() {
         return;
     }
 
+    // Sign in users with the provided login credential
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(() => {
+            // Existing and future Auth states are now persisted in the current
+            // session only. Closing the window would clear any existing state even
+            // if a user forgets to sign out.
+            // ...
+            // New sign-in will be persisted with session persistence.
+            return firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    var user = userCredential.user;
+                    alert("Login successful");
+                    window.location.replace("index.php");
+                    // ...
+                });
+        })
+        .catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            //If error occured, alert user
+            alert(errorMessage);
+        });
+}
+
+function isSignIn() {
     //Check if user is login
     auth.onAuthStateChanged(function(user) {
         if (user) {
             // User is already signed in.
             // return
-
-            var logout_button = document.getElementsByClassName("hide")[0];
-            logout_button.setAttribute("class", "shown");
-
             window.location.replace("index.php");
 
             return;
@@ -217,25 +228,4 @@ function login() {
                 });
         }
     });
-}
-
-function logout() {
-    // [START auth_sign_out]
-    auth.signOut().then(() => {
-        // Sign-out successful.
-
-        var logout_button = document.getElementsByClassName("shown")[0];
-        logout_button.setAttribute("class", "hide");
-
-        window.location.replace("index.php");
-
-    }).catch((error) => {
-        // An error happened.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
-        //If error occured, alert user
-        alert(errorMessage);
-    });
-    // [END auth_sign_out]
 }
