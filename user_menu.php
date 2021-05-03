@@ -8,7 +8,7 @@
 			<h1>User Menu</h1><br/>
 			<ul>
 				<li><a href="user_profile.php">Profile</a></li>
-				<li><a href="rental.php">Rental</a></li>
+				<li><a href="rental_confirm.php">Rental</a></li>
 				<li><a href="parking_confirm.php">Parking</a></li>
 			</ul>
 

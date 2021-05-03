@@ -9,19 +9,19 @@
 			<h3>Tin Huynh</h3>
 		</div>
 		<div class="team_member">
-			<img src="images/parking.jpg" alt="Team Member">
+			<img src="images/team_member.png" alt="Team Member">
 			<h3>Hyunki Lee</h3>
 		</div>
 		<div class="team_member">
-			<img src="images/rental.jpg" alt="Team Member">
+			<img src="images/team_member.png" alt="Team Member">
 			<h3>JiaWen Li</h3>
 		</div>
 		<div class="team_member">
-			<img src="images/rental.jpg" alt="Team Member">
+			<img src="images/team_member.png" alt="Team Member">
 			<h3>Sang Kim</h3>
 		</div>
 		<div class="team_member">
-			<img src="images/rental.jpg" alt="Team Member">
+			<img src="images/team_member.png" alt="Team Member">
 			<h3>Isaiah Smith</h3>
 		</div>
 	</div>

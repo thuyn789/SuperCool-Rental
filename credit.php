@@ -13,6 +13,8 @@
 		<div class="source_info">
 			<h2> Outside Sources: </h2>
 			<ul>
+				<li>https://firebase.google.com/docs/auth/web/manage-users</li>
+				<li>https://firebase.google.com/docs/database/web/read-and-write</li>
 				<li>https://www.youtube.com/watch?v=Oa9LTDR9ugU</li>
 				<li>https://www.programiz.com/javascript/examples/generate-random-strings</li>
 				<li>https://lindell.me/JsBarcode/</li>			
