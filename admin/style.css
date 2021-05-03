@@ -1,0 +1,677 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.container{
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url(images/McQueen.jpg);
+	background-position: center;
+	background-size: cover;
+	box-sizing: border-box;
+}
+
+.navibar{
+	height: 9%;
+	display: flex;
+	align-items: center;
+	padding-left: 6%;
+	padding-right: 6%;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	width: 90%;
+
+}
+
+.brand_logo{
+	width: 300px;
+	cursor: pointer;
+}
+
+.menu_icon{
+	width: 30px;
+	cursor: pointer;
+	margin-left: 60px;
+}
+
+nav{
+	flex: 1;
+	text-align: right;
+}
+
+nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 60px;
+}
+
+.hide{
+	display: none;
+}
+
+nav ul li a{
+	text-decoration: none;
+	color: gray;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+nav ul li a:hover{
+	animation: highlight 0.5s forwards;
+}
+
+@keyframes highlight {
+	from {}
+	to {color:blue; background-color: lightblue;}
+}
+
+.main_content{
+	display: flex;
+	height: 90%;
+	align-items: center;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 2%;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.intro, 
+.services{
+	flex: 50%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	color: white;
+}
+
+
+.intro h1{
+	color: white;
+	font-size: 50px;
+}
+
+.intro p{
+	color: white;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.pic, .team_member{
+	text-align: center;
+	display: inline-block;
+	border-radius: 10px;
+	padding: 15px 25px;
+	cursor: pointer;
+	transition: transform 0.5s;
+}
+
+.pic:hover, .team_member:hover{
+	transform: translateY(-8px);
+}
+
+.pic h3, .team_member h3{
+	color: white;
+}
+
+.team_member img{
+	border-radius: 50%;
+	width: 220px;
+	height: 220px;
+}
+
+.rental_image, .parking_image{
+	width: 234px;
+	height: 293px;
+}
+
+.team_info, .source_info{
+	color: white;
+	flex: 50%;
+}
+
+.register_form, .payment_form{
+	width: 350px;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+	background: white;
+	padding: 20px;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.register_form h2, .payment_form h3{
+	color: blue;
+}
+
+.input_box{
+	border-radius: 20px;
+	border: 1px solid gray;
+	padding: 10px;
+	margin: 10px 10px;
+	width: 85%;
+	outline: none;
+}
+.btn{
+	border-radius: 20px;
+	font-size: 15px;
+	color: white;
+	background-color: #1c8adb;
+	width: 90%;
+	padding: 10px;
+	margin: 10px 10px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.register_form img{
+	width: 70px;
+	margin-top: -50px;
+}
+
+.register_form p{
+	font-size: 15px;
+	padding: 10px;
+	margin: 10px 10px;
+	outline: none;
+}
+
+.register_form p a{
+	text-decoration: none;
+}
+
+.register_form hr{
+	margin-top: 10px;
+}
+
+.error {
+	color: red;
+	font-size: 90%;
+	text-decoration: underline;
+}
+
+.user_menu{
+	flex: 30%;
+	align-items: right;
+	color: white;
+}
+
+.user_menu li{
+	font-size: 20px;
+	list-style: none;
+}
+
+.sub_content{
+	flex: 70%;
+	align-items: right;
+	color: white;
+}
+
+.parkingtablediv {
+	width:100%; 
+	display:inline-block;
+	padding-top:10px;
+	flex: 1;
+	margin-left: 5%;
+}
+.parkingtablediv p{
+	color: white;
+	font-size: 30px;
+	line-height: 20px;
+	text-align: left;
+	padding-bottom: 3%;
+}
+
+.parkingtable {
+	width:50%;
+	background-color: white;
+}
+
+.parkingtable tr td {
+	width:30%;
+	height:30px;
+	border:solid 1px black;
+	color: black;
+	text-align:center;
+}
+
+.parkingtable .disable{
+	background-color: red;
+}
+
+.timepicker {
+	margin-top: 7%;
+	margin-right: 7%;
+	float:left;
+}
+
+.parkingbody {
+	background:#fefefe;
+	border-top:1px solid #dde0e8;
+	border-bottom:1px solid #dde0e8;
+	padding:10px 20px;
+	float:left;
+}
+
+.parkinglist {
+	border:6px solid #F7F9FA;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	-moz-box-shadow:2px 3px 3px rgba(0, 0, 0, 0.6) inset, 0 0 1px purple inset;
+	-webkit-box-shadow:2px 3px 3px rgba(0, 0, 0, 0.06) inset, 0 0 1px #95a2a7 inset;
+	box-shadow:2px 3px 3px rgba(0, 0, 0, 0.3) inset, 0 0 1px purple inset;
+	margin:3px 0 4px;
+	padding:8px 6px;
+	width:30%;
+	display:block;
+}
+
+.parkinglist:focus {
+	border:6px solid #f0f7fc;
+	-moz-box-shadow:2px 3px 3px rgba(0, 0, 0, 0.04) inset, 0 0 1px #0d6db6 inset;
+	-webkit-box-shadow:2px 3px 3px rgba(0, 0, 0, 0.04) inset, 0 0 1px #0d6db6 inset;
+	box-shadow:2px 3px 3px rgba(0, 0, 0, 0.04) inset, 0 0 1px #0d6db6 inset;
+	color:#333;
+}
+.parkinglist {
+	width:294px;
+}
+
+.parkingsub {
+	width:100%;
+	height:100%;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	background:red;
+	background:-moz-linear-gradient(top, gold, yellow);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#badff3', EndColorStr='#7acbed')";
+	border:1px solid #fff !important;
+	cursor: pointer;
+	padding:11px 16px;
+	font:bold 20px/20px Verdana, Tahomma, Geneva;
+	text-shadow:rgba(0,0,0,0.2) 0 1px 0px; 
+	color:#000;
+	-moz-box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+	-webkit-box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+	box-shadow:inset rgba(255,255,255,0.6) 0 1px 1px, rgba(0,0,0,0.1) 0 1px 1px;
+	text-align:center;
+	padding:7px 21px;
+}
+.parkingsub:hover,
+.parkingsub:focus,
+.parkingsub:active {
+	background:red;
+	background:-moz-linear-gradient(top, yellow, gold);
+	background:-webkit-gradient(linear, left top, left bottom, from(#7acbed), to(#badff3));
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#7acbed', EndColorStr='#badff3')";
+}
+.parkingsub:active {
+	text-shadow:rgba(0,0,0,0.3) 0 -1px 0px; 
+}
+
+.payment_form{
+	color: black;
+}
+
+
+.payment_form label{
+	text-align: left;
+}
+
+.parking_info{
+	color: white;
+	margin-left: 8%;
+}
+
+.parking_info p, .rental_info p{
+	font-size: 22px;
+}
+
+.parking_info h1, .rental_info h1{
+	font-size: 33px;
+}
+
+.user_menu a{
+	color: white;
+	text-decoration: none;
+}
+
+.rental_info{
+	color: white;
+	margin-right: 20%;
+}
+
+
+
+.credit_container {
+	padding-top:20%;
+	justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    width: 400px; 
+}
+
+
+
+.card_info {
+    color: white;
+    padding: 0.5px; 
+    text-align: center;
+}
+
+input {
+    margin: 1px 0px;
+}
+
+
+
+input[type="submit"] {
+    display: block;
+    height: 45px;
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: #3d4f87;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+input[type="submit"]:hover {
+    transition: 0.5s ease;
+    background-color: #8594c7;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    
+    background-color: white;
+}
+
+#card_num{
+    width: 100%;
+	height: 30px;
+}
+
+#card_name {
+	width: 100%;
+	height: 30px;
+}
+
+#exp_date {
+    width: 50%;
+    float: left;
+    height: 40px;
+	text-align: center;
+}
+
+#exp_month, #exp_year {
+    width: 43%;
+    float: left;
+    margin-top: 1px;
+    border-radius: 0px;
+    color: black;
+    height: 37px;
+	text-align: center;
+	
+}
+
+#exp_slash {
+    float: left;  
+    font-size: 25px;
+    padding: 3px;
+    color: white;
+}
+
+#cvc {
+    width: 30%;
+	height:33px;
+    float: left;
+	
+}
+
+/* Type */
+
+#card_type {
+    float: right;
+}
+
+#visa {
+	float: right;
+    padding: 8px;
+    font-weight: bold;
+    border: 3px solid rgba(252, 133, 10, 1);;
+    background-color: rgba(252, 255, 255, 0.9);
+    color: rgba(12, 33, 116, 1);
+}
+
+#master {
+	float: right;
+    padding: 8px;
+    font-weight: bold;
+    border: 3px solid rgba(0, 0, 83, 1);;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgba(252, 134, 10, 1);
+}
+
+span {
+    color: rgba(190, 0, 6, 1);
+}
+
+#amex {
+	float: right;
+    padding: 8px;
+    font-weight: bold;
+    border: 3px solid rgba(255, 255, 255, 1);
+    background-color: blue;
+    color: rgba(255, 255, 255, 1);
+}
+
+#discover {
+	float: right;
+    padding: 8px;
+    font-weight: bold;
+    border: 3px solid rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgba(251, 77, 9, 1);
+}
+
+/* Layout */
+.front, .back {
+    position: absolute;
+    font-family: monospace;
+}
+
+.bank {
+    position: absolute;
+    text-align: left;
+    padding: 20px; 
+     
+    font-size: 30px;
+    font-weight: bold; 
+}
+
+.chip {
+    position: absolute;
+    padding: 25px;
+    margin-top: 40px; 
+}
+
+.chip img {
+    width: 50px; 
+}
+
+.card_number {
+    position: absolute;
+    font-size: 28px;
+    padding: 15px; 
+    text-align: left;
+    margin-top: 120px;
+    margin-left: 15px;
+}
+
+.card_name {
+    position: absolute;
+    float: left;
+    text-align: left;
+    padding: 10px;
+    margin-left: 25px;
+    width: 43%; 
+    font-size: 18px;
+    bottom: 20px; 
+	font-weight: bold;
+}
+
+.good_thru {
+    position: absolute;
+    float: left;
+    width: 10%; 
+    text-align: justify;
+    font-size: 8px;
+    bottom: 29px;
+    right: 150px; 
+	font-weight: bold;
+}
+
+.exp_date {
+    position: absolute;
+    float: right;
+    padding: 10px;
+    text-align: left;
+    width: 15%;
+    font-size: 18px;
+    bottom: 20px;
+    right: 0;
+	font-weight: bold;
+}
+
+#expmonth {
+    position: absolute;
+    right: 90px;
+    bottom: 10px;
+}
+
+#expslash {
+    position: absolute;
+    right: 75px; 
+    bottom: 10px;
+}
+
+#expyear {
+    position: absolute;
+    right: 50px;
+    bottom: 10px;
+}
+
+.back_style {
+    position: relative; 
+    background-color: black;
+    height: 55px;
+    margin-top: 25px;
+}
+
+.info_style {
+    position: relative;
+    float: left;
+    background-color: white;
+    border-radius: 30px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 280px; 
+}
+
+.cvc {
+    position: relative;
+    text-align: left;
+    margin-top: 33px;
+    float: right;
+    margin-right: 15px; 
+    width: 50px; 
+}
+
+#logo-img {
+    position: absolute;
+    width: 80px;
+    bottom: 0;
+    right: 0;
+    padding: 13px;
+}
+
+
+/*  Flip Animation */
+
+.flip_container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+	width: 100%;
+    height: 245px;
+    overflow: hidden;
+    padding: 1%; 
+    margin: 0 auto; 
+    
+}
+
+.flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip {
+    -webkit-transition: 0.5s;
+    -webkit-transform-style: preserve-3d;
+    
+    -moz-transition: 0.5s;
+    -moz-transform-style: preserve-3d;
+    
+    -o-transition: 0.5s;
+    -o-transform-style: preserve-3d;
+    
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    
+    position: relative;
+}
+
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.front {
+    background-color: grey;
+    z-index: 2;
+}
+
+.back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background-color: #b5c3d2;
+}

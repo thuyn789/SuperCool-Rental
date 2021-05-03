@@ -9,7 +9,7 @@
 			<li><a href="user_menu.php">PROFILE</a></li>
 			<li><a href="team.php">OUR TEAM</a></li>
 			<li><a href="credit.php">CREDITS</a></li>
-			<li><a href="#">ADMIN LOGIN</a></li>
+			<li><a href="./admin/admin_login.php">ADMIN LOGIN</a></li>
 			
 		</ul>
 	</nav>
