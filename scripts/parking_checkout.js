@@ -31,11 +31,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 function place_order() {
 
     // Retrieving the values of form elements 
-    var cname = document.getElementById("cname").value;
-    var ccnum = document.getElementById("ccnum").value;
-    var expmonth = document.getElementById("expmonth").value;
-    var expyear = document.getElementById("expyear").value;
-    var cvv = document.getElementById("cvv").value;
+    var cname = document.getElementById("card_name").value;
+    var ccnum = document.getElementById("card_num").value;
+    var expmonth = document.getElementById("exp_month").value;
+    var expyear = document.getElementById("exp_year").value;
+    var cvv = document.getElementById("cvc").value;
 
     // Defining error variables with a default value
     var isErr = false;
@@ -50,11 +50,11 @@ function place_order() {
         isErr = true;
     }
 
-    if (expmonth == "") {
+    if (expmonth == "MM") {
         isErr = true;
     }
 
-    if (expyear == "") {
+    if (expyear == "YY") {
         isErr = true;
     }
 
