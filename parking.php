@@ -50,7 +50,7 @@
 			</table>
 		</div>
 		<div class="timepicker">
-			<form class="parkingbook" action="" method="POST">
+			<form class="parkingbook">
 				<fieldset class="parkingbody">
 					<label><strong>Parking Information</strong></label>
 					<hr/>
@@ -178,10 +178,8 @@
 					<br/>
 					<br/>
 					<input type="button" onclick="checkout()" class="parkingsub" value="Reserve">
-				</fieldset>
-				
+				</fieldset>			
 			</form>
-
 		</div>
 	</div>
 </div>

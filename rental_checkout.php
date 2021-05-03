@@ -4,24 +4,18 @@
 	<?php include 'common/navibar.php'; ?>
 
 	<div class="main_content">
-		<div class="parkingtablediv">
-			<p>Checkout Cart</p>
-			<table class="parkingtable">
-				<tr>
-					<th>Date</th>
-					<th>Location</th>
-					<th>Duration</th>
-					<th>Total</th>
-					
-				</tr>
-				<tr>
-					<td id="checkout_date"></td>
-					<td id="checkout_location"></td>
-					<td id="checkout_duration"></td>
-					<td id="checkout_total"></td>
-				</tr>
-			</table>
+		<div class="rental_info">
+			<h1>Checkout Cart</h1>
+
+			<p>Date: <span id="checkout_date"></span></p>
+			<p>Location: <span id="checkout_location"></span></p>
+			<p>Duration: <span id="checkout_duration"></span></p>
+			<p>Type: <span id="checkout_type"></span></p>
+			<p>Make: <span id="checkout_make"></span></p>
+			<p>Year: <span id="checkout_year"></span></p>
+			<p>Total: <span id="checkout_total"></span></p>
 		</div>
+		
 		<div>
 			<div class="payment_form">
 				<form>
@@ -46,6 +40,6 @@
 	</div>
 </div>
 
-<script src="./scripts/parking_checkout.js"></script>
+<script src="./scripts/rental_checkout.js"></script>
 <!-- shared page bottom HTML -->
 <?php include 'common/common-footer.php'; ?>

@@ -330,15 +330,20 @@ nav ul li a:hover{
 	margin-left: 8%;
 }
 
-.parking_info p{
+.parking_info p, .rental_info p{
 	font-size: 22px;
 }
 
-.parking_info h1{
+.parking_info h1, .rental_info h1{
 	font-size: 33px;
 }
 
 .user_menu a{
 	color: white;
 	text-decoration: none;
+}
+
+.rental_info{
+	color: white;
+	margin-right: 20%;
 }

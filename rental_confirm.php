@@ -5,38 +5,45 @@
 
 	<div class="main_content">
 		<div class="parking_info">
-			<h1>Your Parking Information</h1>
+			<h1>Your Rental Information</h1>
 
 			<p>Date: <span id="date"></span></p>
-			<p>Duration: <span id="duration"></span></p>
-			<p>Spot: <span id="spot"></span></p>
-			<p>Total Paid: <span id="total"></span></p>
-			<p>Barcode: <svg id="barcode"></svg></p>
+            <p>Location: <span id="location"></span></p>
+            <p>Duration: <span id="duration"></span></p>
+            <p>Type: <span id="type"></span></p>
+            <p>Make: <span id="make"></span></p>
+            <p>Year: <span id="year"></span></p>
+            <p>Total Paid: <span id="total"></span></p>
+			<p>Confirmation: <svg id="barcode"></svg></p>
 		</div>
 	</div>
 </div>
 
 <script src="./scripts/JsBarcode.all.min.js"></script>
 <script>
-	var code;
+	var confirmation;
 	firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
         var userId = user.uid;
         const dbRef = firebase.database().ref();
-        dbRef.child("users").child(userId).child("parking_paid")
+        dbRef.child("users").child(userId).child("rental_paid")
             .get().then((snapshot) => {
                 if (snapshot.exists()) {
-                    var parking_obj = snapshot.val();
+                    var rental_obj = snapshot.val();
 
-                    document.getElementById("date").innerHTML = parking_obj["date"];
-                    document.getElementById("spot").innerHTML = parking_obj["spot"];
-                    document.getElementById("duration").innerHTML = parking_obj["duration"]+" hr";
-                    document.getElementById("total").innerHTML = "$"+parking_obj["total_paid"];
-                    code = parking_obj["barcode"];
+                    document.getElementById("type").innerHTML = rental_obj["car_type"];
+                    document.getElementById("make").innerHTML = rental_obj["car_make"];
+                    document.getElementById("year").innerHTML = rental_obj["car_year"];
+
+                    document.getElementById("date").innerHTML = rental_obj["date"];
+                    document.getElementById("location").innerHTML = rental_obj["location"];
+                    document.getElementById("duration").innerHTML = rental_obj["duration"]+" hr";
+                    document.getElementById("total").innerHTML = "$"+rental_obj["total_paid"];
+                    confirmation = rental_obj["confirmation"];
 
                     //print barcode to page
-                    JsBarcode("#barcode", code);
+                    JsBarcode("#barcode", confirmation);
                 } else {
                     console.log("No data available");
                 }

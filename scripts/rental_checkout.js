@@ -1,4 +1,4 @@
-var parking_obj;
+var rental_obj;
 
 
 firebase.auth().onAuthStateChanged(function(user) {
@@ -6,15 +6,19 @@ firebase.auth().onAuthStateChanged(function(user) {
         // User is signed in.
         var userId = user.uid;
         const dbRef = firebase.database().ref();
-        dbRef.child("users").child(userId).child("parking_checkout")
+        dbRef.child("users").child(userId).child("rental_checkout")
             .get().then((snapshot) => {
                 if (snapshot.exists()) {
-                    parking_obj = snapshot.val();
+                    rental_obj = snapshot.val();
 
-                    document.getElementById("checkout_date").innerHTML = parking_obj["date"];
-                    document.getElementById("checkout_location").innerHTML = parking_obj["spot"];
-                    document.getElementById("checkout_duration").innerHTML = parking_obj["duration"] + " hr";
-                    document.getElementById("checkout_total").innerHTML = "$" + parking_obj["total"];
+                    document.getElementById("checkout_type").innerHTML = rental_obj["car_type"];
+                    document.getElementById("checkout_make").innerHTML = rental_obj["car_make"];
+                    document.getElementById("checkout_year").innerHTML = rental_obj["car_year"];
+
+                    document.getElementById("checkout_date").innerHTML = rental_obj["date"];
+                    document.getElementById("checkout_location").innerHTML = rental_obj["location"];
+                    document.getElementById("checkout_duration").innerHTML = rental_obj["duration"] + " hr";
+                    document.getElementById("checkout_total").innerHTML = "$" + rental_obj["total"];
                 } else {
                     console.log("No data available");
                 }
@@ -69,12 +73,15 @@ function place_order() {
         return;
     }
 
-    var parking_paid = {
-        barcode: parking_obj["barcode"],
-        date: parking_obj["date"],
-        duration: parking_obj["duration"],
-        spot: parking_obj["spot"],
-        total_paid: parking_obj["total"],
+    var rental_paid = {
+        car_make: rental_obj["car_make"],
+        car_type: rental_obj["car_type"],
+        car_year: rental_obj["car_year"],
+        confirmation: rental_obj["confirmation"],
+        date: rental_obj["date"],
+        duration: rental_obj["duration"],
+        location: rental_obj["location"],
+        total_paid: rental_obj["total"],
         name_on_card: cname,
         card_number: ccnum,
         expmonth: expmonth,
@@ -85,14 +92,14 @@ function place_order() {
         if (user) {
             // User is signed in.
             var userId = user.uid;
-            firebase.database().ref('users/' + user.uid + "/parking_paid").set(parking_paid, (error) => {
+            firebase.database().ref('users/' + user.uid + "/rental_paid").set(rental_paid, (error) => {
                 if (error) {
                     // The write failed...
                     alert("Please try again");
                 } else {
                     // Data saved successfully!
                     alert("Checkout successfully! Thank you");
-                    window.location.href = "parking_confirm.php";
+                    window.location.href = "rental_confirm.php";
                 }
             });
         } else {
@@ -101,18 +108,4 @@ function place_order() {
             console.log("User is logged out");
         }
     });
-
-
-    var unavailable_parking = {
-        status: "unavailable"
-    };
-
-    //set the parking spot unavailable
-    firebase.database().ref('parking_spots/' + parking_obj["spot"]).set(unavailable_parking, (error) => {
-        if (error) {
-            // The write failed...
-            alert("Please try again");
-        }
-    });
-
 }
