@@ -17,6 +17,9 @@
                 <input id="password" class="input_box" type="password" size="16" placeholder="Password"><br/>
 
                 <input id="submit-btn" class="btn" type="button" onclick="login()" value="Login"><br/>
+
+                <hr/>
+                <p>Please contact your administrator for login credential</p>
             </form>
         </div>
     </div>

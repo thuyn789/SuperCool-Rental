@@ -213,19 +213,23 @@ nav ul li a:hover{
 	color: white;
 }
 
-.parkingtablediv {
+.parkingtablediv, .records_div {
 	width:100%; 
 	display:inline-block;
 	padding-top:10px;
 	flex: 1;
 	margin-left: 5%;
 }
-.parkingtablediv p{
+.parkingtablediv p, .records_div p{
 	color: white;
 	font-size: 30px;
 	line-height: 20px;
 	text-align: left;
 	padding-bottom: 3%;
+}
+
+.records_div{
+	color: white;
 }
 
 .parkingtable {

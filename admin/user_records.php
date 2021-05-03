@@ -8,12 +8,12 @@
 		<?php include 'common/admin_submenu.php'; ?>
 
 		<div id="records_div" class="records_div">
-			<p>Rental Records</p>
+			<p>User Records</p>
 			
 		</div>
 	</div>
 </div>
 
-<script src="./scripts/rental_records.js"></script>
+<script src="./scripts/user_records.js"></script>
 <!-- shared page bottom HTML -->
 <?php include 'common/common-footer.php'; ?>

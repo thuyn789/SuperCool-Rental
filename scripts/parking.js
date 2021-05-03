@@ -8,7 +8,7 @@ firebase.database().ref('parking_spots').on('value', function(snapshot) {
 
 		var spot = {
 			status: ""
-		}
+		};
 
 		for (n in snap[i]) {
 			//console.log(n + ": " + snap[i][n]);
