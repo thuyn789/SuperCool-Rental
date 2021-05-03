@@ -7,21 +7,19 @@
 		<div class="user_menu">
 			<h1>User Menu</h1><br/>
 			<ul>
-				<li>Profile</li>
-				<li>Rental</li>
-				<li>Parking</li>
-				<li>Menu</li>
-				<li>Menu</li>
+				<li><a href="user_profile.php">Profile</a></li>
+				<li><a href="rental.php">Rental</a></li>
+				<li><a href="parking_confirm.php">Parking</a></li>
 			</ul>
 
 		</div>
 		<div class="sub_content">
-			<div class="pic">
-				<p> Info will be loaded on this side</p>
-			</div>
+			
 		</div>
 	</div>
 </div>
 
+
+<script src="./scripts/signup_login.js"></script>
 <!-- shared page bottom HTML -->
 <?php include 'common/common-footer.php'; ?>

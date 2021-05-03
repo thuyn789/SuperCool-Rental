@@ -101,17 +101,22 @@ function signup() {
         .then(function(user) {
             var user = auth.currentUser;
 
-            database.ref('users/' + user.uid).set(user_obj);
-            alert("Sign up successful. Thank you");
+            database.ref('users/' + user.uid).set(user_obj, (error) => {
+                if (error) {
+                    // The write failed...
+                    alert("Failed upload data");
+                } else {
+                    // Data saved successfully!
+                    alert("Sign up successful. Thank you");
 
-            setTimeout(() => {
-                //On success, take user back to index page
-                //The difference between href and replace()
-                //replace() removes the URL of the current document from 
-                //the document history, meaning that it is not possible to 
-                //use the "back" button to navigate back to the original document.
-                window.location.replace("index.php");
-            }, 5000);
+                    //On success, take user back to index page
+                    //The difference between href and replace()
+                    //replace() removes the URL of the current document from 
+                    //the document history, meaning that it is not possible to 
+                    //use the "back" button to navigate back to the original document.
+                    window.location.replace("index.php");
+                }
+            });
 
         })
         .catch((error) => {
@@ -159,7 +164,7 @@ function login() {
     }
 
     // Sign in users with the provided login credential
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
         .then(() => {
             // Existing and future Auth states are now persisted in the current
             // session only. Closing the window would clear any existing state even
@@ -185,18 +190,72 @@ function login() {
         });
 }
 
-function isSignIn() {
-    //Check if user is login
-    auth.onAuthStateChanged(function(user) {
+function updateInfo() {
+    // Retrieving the values of form elements 
+    var fname = document.getElementById("first_name").value;
+    var lname = document.getElementById("last_name").value;
+    var username = document.getElementById("username").value;
+    var email = document.getElementById("email").value;
+
+    // Validate first name
+    if (fname == "") {
+        printError("fnameErr", "Please enter your first name");
+        isErr = true;
+    } else {
+        printError("fnameErr", "");
+        isErr = false;
+    }
+
+    // Validate last name
+    if (lname == "") {
+        printError("lnameErr", "Please enter your last name");
+        isErr = true;
+    } else {
+        printError("lnameErr", "");
+        isErr = false;
+    }
+
+    // Validate username
+    if (username == "") {
+        printError("usernameErr", "Please enter your username");
+        isErr = true;
+    } else {
+        printError("usernameErr", "");
+        isErr = false;
+    }
+
+    // Validate email
+    if (email == "") {
+        printError("emailErr", "Please enter your email");
+        isErr = true;
+    } else {
+        printError("emailErr", "");
+        isErr = false;
+    }
+
+    var user_obj = {
+        first_name: fname,
+        last_name: lname,
+        user_name: username,
+        email_address: email
+    };
+
+    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            // User is already signed in.
-            // return
-            window.location.replace("index.php");
-
-            return;
+            // User is signed in.
+            var userId = user.uid;
+            const dbRef = firebase.database().ref();
+            dbRef.child("users").child(userId).set(user_obj, (error) => {
+                if (error) {
+                    // The write failed...
+                    alert("Failed update user info");
+                } else {
+                    // Data saved successfully!
+                    alert("Update successful");
+                }
+            });
         } else {
-            // No user is signed in.
-
+            console.log("User is logged out");
         }
     });
 }

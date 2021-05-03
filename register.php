@@ -30,7 +30,7 @@
                 <input id="submit-btn" class="btn" type="button" onclick="signup()" value="Sign up!"><br/>
 
                 <hr/>
-                <p>Already Registered? <a href="index.php">Login</a></p>
+                <p>Already Registered? <a href="login.php">Login</a></p>
             </form>
         </div>
     </div>

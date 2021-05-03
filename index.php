@@ -10,13 +10,16 @@
 		</div>
 		<div class="services">
 			<div class="pic">
-				<a href = rental.php> <h3>Car Rental</h3>
-				<img src="images/rental.jpg" class="rental_image" alt="rental image">
-			</a>
+				<a href = "rental.php"> 
+					<h3>Car Rental</h3>
+					<img src="images/rental.jpg" class="rental_image" alt="rental image">
+				</a>
 			</div>
 			<div class="pic">
-				<h3>Parking Services</h3>
-				<img src="images/parking.jpg" class="parking_image" alt="parking image">
+				<a href="parking.php">
+					<h3>Parking Services</h3>
+					<img src="images/parking.jpg" class="parking_image" alt="parking image">
+				</a>
 			</div>
 		</div>
 	</div>
