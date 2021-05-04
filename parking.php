@@ -56,7 +56,7 @@
 					<hr/>
 					<label>Choose Location</label>
 					<select id="location" class="parkinglist">
-						<option></option>
+						<option label="Select"></option>
 						<option value="LO01">LO 01</option>
 						<option value="LO02">LO 02</option>
 						<option value="LO03">LO 03</option>

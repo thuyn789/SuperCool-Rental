@@ -33,7 +33,7 @@
 						<div class="front" id="front">
 							<div class="bank">Card Example</div>
 							<br/>
-							<div class="chip"><img src="./images/chip.png"></div>
+							<div class="chip"><img src="./images/chip.png" alt="chip"></div>
 							<div class="card_number" id="cardnumber">•••• •••• •••• ••••</div>
 							<div class="card_name" id="cardname">CardHolder</div>
 							<div class="good_thru">Good Thru</div>
@@ -48,7 +48,7 @@
 							<div class="back_style"></div>
 							<div class="info_style"></div>
 							<div class="cvc" id="securitycode">CVC</div>
-							<img src="#" id="logo-img">
+							<img src="#" id="logo-img" alt="logo">
 						</div>
 					</div>
 				</div>

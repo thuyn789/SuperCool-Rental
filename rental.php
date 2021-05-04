@@ -5,7 +5,7 @@
 
 	<div class="main_content">
 		<div class="timepicker">
-			<form class="parkingbook" action="" method="POST">
+			<form class="parkingbook">
 				<fieldset class="parkingbody">
 					<label><strong>Rental Car</strong></label>
 					<hr/>
@@ -16,7 +16,7 @@
 					<br/>
 					<label>Type</label>
 					<select id="car_type" class="parkinglist">
-						<option></option>
+						<option label="Select"></option>
 						<option value="compact">Compact</option>
 						<option value="midsize">Mid Size</option>
 						<option value="fullsize">Full Size</option>
@@ -30,7 +30,7 @@
 					</select>
 					<label>Make</label>
 					<select id="car_make" class="parkinglist">
-						<option></option>
+						<option label="Select"></option>
 						<option value="Audi">Audi</option>
 						<option value="Bentley">Bentley</option>
 						<option value="BMW">BMW</option>
@@ -41,7 +41,7 @@
 
 					<label>Year</label>
 					<select id="car_year" class="parkinglist">
-						<option></option>
+						<option label="Select"></option>
 						<option value="2021">2021</option>
 						<option value="2020">2020</option>
 						<option value="2019">2019</option>
@@ -62,7 +62,7 @@
 					<hr/>
 					<label>Choose Location</label>
 					<select id="location" class="parkinglist">
-						<option></option>
+						<option label="Select"></option>
 						<option value="ATLAir">Atlanta Airport</option>
 						<option value="ATLCity">Atlanta City</option>
 						<option value="ATLSandy">Sandy Springs</option>

@@ -7,7 +7,7 @@
     <div class="main_content">
         <div class="register_form">
             <form>
-                <img src="./images/user_icon.png">
+                <img src="./images/user_icon.png" alt="user icon">
                 <h2>Log In</h2>
 
                 <div class="error" id="emailErr"></div>

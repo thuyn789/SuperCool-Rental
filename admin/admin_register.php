@@ -11,7 +11,7 @@
         <div class="sub_content">
             <div class="register_form">
                 <form>
-                    <img src="./images/user_icon.png">
+                    <img src="./images/user_icon.png" alt="user icon">
                     <h2>Admin Sign Up</h2>
                     <div class="error" id="fnameErr"></div>
                     <input id="first_name" class="input_box" type="text" size="16" placeholder="First Name"><br/>
